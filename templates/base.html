@@ -3,10 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>{% block head %}{% endblock %}</title>
+  <title>{% block head %}Shubhendu's Projects{% endblock %}</title>
   {% block styles %}
     {{ bootstrap.load_css() }}
   {% endblock %}
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet", href="{{ url_for('static', filename='CSS/custom-styles.css') }}">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400;700&family=Kaushan+Script&family=Lato:wght@100;400;900&family=Montserrat:wght@100;200;400;900&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon/favicon-64x64.png') }}">
@@ -19,13 +27,37 @@
 </head>
 <body>
 
-  <!-- Navigation -->
+<section id="navigation">
+<nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ url_for('home') }}">My Projects</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#apps">Apps</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#games">Games</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#websites">Websites</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link blog-link" target="_blank" href="https://shubhendublog.azurewebsites.net/">My Blog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</section>
+{% block content %}{% endblock %}
 
-
-  {% block content %}{% endblock %}
-
-  {% block scripts %}
-    {{ bootstrap.load_js() }}
-  {% endblock %}
+{% block scripts %}
+  {{ bootstrap.load_js() }}
+{% endblock %}
 </body>
 </html>
