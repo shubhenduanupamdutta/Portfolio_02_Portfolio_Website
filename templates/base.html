@@ -9,7 +9,7 @@
   {% endblock %}
 
   <!-- Custom Styles -->
-  <link rel="stylesheet", href="{{ url_for('static', filename='CSS/custom-styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/custom-styles.css') }}">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,35 +27,75 @@
 </head>
 <body>
 
-<section id="navigation">
-<nav class="navbar navbar-dark navbar-expand-lg bg-primary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{{ url_for('home') }}">My Projects</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#apps">Apps</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#games">Games</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#websites">Websites</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link blog-link" target="_blank" href="https://shubhendublog.azurewebsites.net/">My Blog</a>
-        </li>
-      </ul>
+  <section id="navigation">
+  <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ url_for('home') }}">My Projects</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#apps">Apps</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#games">Games</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#websites">Websites</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('contact') }}"> Contact </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link blog-link" target="_blank" href="https://shubhendublog.azurewebsites.net/">My Blog</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
-</section>
-{% block content %}{% endblock %}
+  </nav>
+  </section>
+  {% block content %}{% endblock %}
 
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://twitter.com/shubhenduanupam">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/shubhendu.anupam">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/shubhenduanupamdutta">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; Shubhendu A Dutta, {{ year }} <br>
+             Created using Flask, Flask Extensions and Bootstrap 5
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer
 {% block scripts %}
   {{ bootstrap.load_js() }}
 {% endblock %}

@@ -1,7 +1,19 @@
 /*body {*/
 /*    background-color: black;*/
 /*}*/
+/*********** Some Defaults --------------*/
 
+h2 {
+    font-family: "Alkatra", sans-serif;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*************** Navigation Bar ****************/
 #navigation {
     background-color: #0d6efd;
     padding: 0.5rem 1rem;
@@ -21,7 +33,9 @@
     color: #FC4F19;
 }
 
-#introduction {
+
+/**************** Website Title or Header ****************/
+#header {
     margin: auto;
     padding: 6% 2rem;
     text-align: center;
@@ -29,18 +43,57 @@
     line-height: 5;
 }
 
-#introduction h1 {
+#header h1 {
     font-family: "Montserrat",sans-serif;
     font-weight: bold;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
 }
 
-#introduction h2 {
+#header h2 {
     font-family: "Alkatra", sans-serif;
     font-style: italic;
+    padding-bottom: 1.5rem;
 }
-#introduction .avatar {
+#header .avatar {
     border-radius: 50%;
-    width: max(25%, 200px)
+    width: max(25%, 200px);
+}
+
+/********** Introduction ************/
+
+#introduction .container {
+    padding: 5% 12%;
+}
+
+#introduction .container {
+    padding: 5% 12%;
+    text-align: center;
+}
+
+/******** APPS ****************/
+#apps .container {
+    padding: 5% 12%;
+    text-align: center;
+}
+
+/************ Contact Me Button **********/
+.btn-container {
+    text-align: center;
+    padding: 20px 5% 20px;
+}
+
+.btn-container a {
+    color: unset;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+footer p {
+    text-align: center;
+    line-height: 2;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 0.8rem;
 }

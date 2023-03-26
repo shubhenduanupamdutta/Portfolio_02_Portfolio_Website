@@ -1,8 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
+  <!-- Header -->
+  <section id="header">
+    <div class="container">
+      <h1> Materials Engineer, Python Developer</h1>
+      <h2> This webpage showcases some of my projects</h2>
+      <img class='avatar' src="{{ url_for('static', filename='images/my-avatar.png') }}" alt="my-avatar">
+    </div>
+  </section>
+
   {% include 'my-intro.html' %}
   {% include 'apps.html' %}
   {% include 'games.html' %}
   {% include 'websites.html' %}
+
+  <div class="container btn-container">
+    <button type="button" class="btn btn-info"> <a href="{{ url_for('contact') }}">Contact Me</a> </button>
+  </div>
 {% endblock %}

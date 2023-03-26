@@ -17,6 +17,10 @@ def home():
     return render_template("index.html")
 
 
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
 @app.context_processor
 def inject_variables():
     cur_year = datetime.now().year
