@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, url_for
 from flask_bootstrap import Bootstrap5
 from datetime import datetime
+from forms import *
 import os
 
 # Starting Flask App
@@ -12,14 +13,17 @@ bootstrap = Bootstrap5()
 bootstrap.init_app(app)
 
 
-@app.route('/')
+def send_mail(name, email, subject, message):
+    pass
+
+
+@app.route('/', methods=["GET", "POST"])
 def home():
-    return render_template("index.html")
+    form = ContactForm()
+    if form.validate_on_submit():
+        send_mail(form.name.data, form.email.data, form.subject.data, form.message.data)
+    return render_template("index.html", form=form)
 
-
-@app.route("/contact")
-def contact():
-    return render_template("contact.html")
 
 @app.context_processor
 def inject_variables():
